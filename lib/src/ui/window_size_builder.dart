@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:responsive_ui/src/data/window_size_configuration_data.dart';
-import 'package:responsive_ui/src/ui/window_size_configuration.dart';
 
 import '../data/window_size.dart';
+import '../data/window_size_configuration_data.dart';
+import 'window_size_configuration.dart';
 
 typedef Builder = Widget Function(WindowSize width, WindowSize height, Widget? child);
 
@@ -48,14 +48,11 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
 
     WindowSizeConfigurationData data = WindowSizeConfiguration.of(context);
 
-
     WindowSize width;
     WindowSize height;
 
-
     Size size = MediaQuery.sizeOf(context);
     (width, height) = data.getWindowSize(size);
-
 
     if (width != _width || height != _height) {
       _width = width;
