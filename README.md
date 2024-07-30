@@ -25,7 +25,7 @@ You can also easily create your own Layout bounds.
 ## Getting started
 
 ```terminal
-dart pub add responsive_ui
+dart pub add responsive_ux
 ```
 
 ## Usage
