@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* feat: Alpha release for WindowSizeClass-based definition (see ReadMe.md)
