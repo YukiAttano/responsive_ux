@@ -11,29 +11,74 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Library to create Responsive UI more easily
+
+The current state is under active development and might change heavily until the first stable release.
+Feel free to reach out on GitHub
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Implementation of [WindowSizeClass](https://developer.android.com/develop/ui/compose/layouts/adaptive/window-size-classes?hl=de) and 
+- (coming) Implementation of [UserInterfaceSizeClass](https://anvilproject.org/guides/content/creating-links)
+You can also easily create your own Layout bounds.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```terminal
+dart pub add responsive_ui
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+(see /example folder for a simple example)
 
 ```dart
-const like = 'sample';
+MaterialApp(
+    // WindowSizeConfiguration must only be injected for custom boundaries, otherwise defaults are used (check documentation)
+    home: WindowSizeConfiguration(
+      data: WindowSizeConfigurationData(
+      sizes: [WindowSizes.compact]
+    ),
+    child: BuilderScreen(),
+  ),
+);
+```
+
+```dart
+WindowSizeBuilder(
+  builder: (width, height, child) {
+    String w = "";
+    String h = "";
+
+    switch (width) {
+      case WindowSizes.compact:
+        w = "Compact";
+      case WindowSizes.medium:
+        w = "Medium";
+      case WindowSizes.expanded:
+        w = "Expanded";
+    }
+
+    switch (height) {
+      case WindowSizes.compact:
+        h = "Compact";
+      case WindowSizes.medium:
+        h = "Medium";
+      case WindowSizes.expanded:
+        h = "Expanded";
+    }
+    
+    print(width.width);   // The WindowSize width boundary that is matched
+    print(height.height); // The WindowSize height boundary that is matched
+
+    return Text("W: $w\nH: $h");
+  },
+);
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+This package has been developed as Flutter does not has an [implementation](https://github.com/flutter/flutter/issues/142343?notification_referrer_id=NT_kwDOBRti3rM5MjMzODYxOTQyOjg1NjgwODYy) right now
+
+As the name suggests, we are open for ideas do not just limit this package on what there currently is. 
+Every improvement can be requested and contributed on GitHub.
