@@ -1,4 +1,4 @@
-library responsive_ui;
+library responsive_ux;
 
 export 'src/data/window_size.dart';
 export 'src/data/window_size_configuration_data.dart';

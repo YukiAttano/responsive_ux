@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:responsive_ui/responsive_ui.dart';
+import 'package:responsive_ui/responsive_ux.dart';
 
 import 'builder_screen.dart';
 

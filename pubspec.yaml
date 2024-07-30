@@ -1,5 +1,5 @@
-name: responsive_ui
-description: "Responsive UI describes the reaction to size changes."
+name: responsive_ux
+description: "various utilities to implement a Responsive UX."
 version: 0.0.1
 homepage:
 

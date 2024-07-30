@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_ui/responsive_ui.dart';
+import 'package:responsive_ui/responsive_ux.dart';
 
 class BuilderScreen extends StatelessWidget {
   const BuilderScreen({super.key});
