@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * doc: fix package name in ReadMe 
+
+## Unreleased
+
+* feat: add WindowSizeNotifier to listen outside of the build method for changes

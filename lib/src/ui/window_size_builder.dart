@@ -71,3 +71,4 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
     return _child;
   }
 }
+

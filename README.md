@@ -30,7 +30,7 @@ dart pub add responsive_ux
 
 ## Usage
 
-(see /example folder for a simple example)
+(see /example folder for a working example and different use cases)
 
 ```dart
 MaterialApp(
