@@ -82,5 +82,5 @@ WindowSizeBuilder(
 
 This package has been developed as Flutter does not has an [implementation](https://github.com/flutter/flutter/issues/142343?notification_referrer_id=NT_kwDOBRti3rM5MjMzODYxOTQyOjg1NjgwODYy) right now
 
-As the name suggests, we are open for ideas do not just limit this package on what there currently is. 
+As the name suggests, we are open for ideas and do not limit this package on what there currently is. 
 Every improvement can be requested and contributed on GitHub.
