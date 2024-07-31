@@ -1,4 +1,5 @@
 import 'package:example/util/screen.dart';
+import 'package:example/util/window_size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_ui/responsive_ux.dart';
 
@@ -21,30 +22,8 @@ class _ListenerScreenState extends State<ListenerScreen> {
 
     _notifier.addListener(
       () {
-        String w = "";
-        String h = "";
-
-        switch (_notifier.width) {
-          case WindowSizes.compact:
-            w = "Compact";
-          case WindowSizes.medium:
-            w = "Medium";
-          case WindowSizes.expanded:
-            w = "Expanded";
-          case null:
-            w = "null";
-        }
-
-        switch (_notifier.height) {
-          case WindowSizes.compact:
-            h = "Compact";
-          case WindowSizes.medium:
-            h = "Medium";
-          case WindowSizes.expanded:
-            h = "Expanded";
-          case null:
-            h = "null";
-        }
+        String w = _notifier.width.toWindowSizeString();
+        String h = _notifier.height.toWindowSizeString();
 
         setState(() {
           width = w;

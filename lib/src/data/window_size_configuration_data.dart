@@ -17,6 +17,9 @@ class WindowSizeConfigurationData {
   }
 
   const WindowSizeConfigurationData.material() : this._(sizes: WindowSizes.material);
+  const WindowSizeConfigurationData.compose() : this._(sizes: WindowSizes.compose);
+  const WindowSizeConfigurationData.cupertino() : this._(sizes: WindowSizes.cupertino);
+  const WindowSizeConfigurationData.desktop() : this._(sizes: WindowSizes.material);
 
   WindowSize getWidthWindowSize(double width) => WindowSize.ofWidth(width, sizes);
 

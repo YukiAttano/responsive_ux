@@ -15,7 +15,8 @@ class ResponsiveUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WindowSizeConfiguration(
+      home: WindowSizeConfiguration.adaptive(
+        platform: Theme.of(context).platform,
         /*
           data: WindowSizeConfigurationData(
           sizes: [WindowSizes.compact]
