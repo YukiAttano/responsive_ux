@@ -18,8 +18,10 @@ Feel free to reach out on GitHub
 
 ## Features
 
-- Implementation of [WindowSizeClass](https://developer.android.com/develop/ui/compose/layouts/adaptive/window-size-classes?hl=de) and 
-- (coming) Implementation of [UserInterfaceSizeClass](https://anvilproject.org/guides/content/creating-links)
+- Implementation of (Jetpack Compose) [WindowSizeClass](https://developer.android.com/develop/ui/compose/layouts/adaptive/window-size-classes?hl=de)
+- Implementation of (Apple) [UserInterfaceSizeClass](https://anvilproject.org/guides/content/creating-links)
+- Implementation of (Material) [WindowSizeClass](https://m3.material.io/foundations/layout/applying-layout/window-size-classes#2bb70e22-d09b-4b73-9c9f-9ef60311ccc8)
+
 You can also easily create your own Layout bounds.
 
 ## Getting started

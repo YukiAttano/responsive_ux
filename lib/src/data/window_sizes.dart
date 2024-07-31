@@ -16,7 +16,7 @@ sealed class WindowSizes {
   /// https://m3.material.io/foundations/layout/applying-layout/window-size-classes#9e94b1fb-e842-423f-9713-099b40f13922
   static const WindowSize extraLarge = WindowSize(1600, 1600);
 
-  // TODO: check if this is the correct breakpoint for Apple
+  // TODO(YukiAttano): check if this is the correct breakpoint for Apple
   // It is calculated from ChatGPT based on the official documentation
   static const WindowSize regular = WindowSize(768, 768);
 
@@ -52,9 +52,9 @@ sealed class WindowSizes {
   ];
 
 
-  /// [WindowSize]Classes defined by Apple
+  /// [WindowSize]Classes defined by Apple (known as UserInterfaceSizeClass)
   ///
-  /// see https://m3.material.io/foundations/layout/canonical-layouts/list-detail
+  /// see https://developer.apple.com/design/human-interface-guidelines/layout
   ///
   /// Changes in this list will be major updates
   static const List<WindowSize> cupertino = [

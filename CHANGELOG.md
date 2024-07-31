@@ -6,6 +6,7 @@
 
 * doc: fix package name in ReadMe 
 
-## Unreleased
+## 0.1.0
 
 * feat: add WindowSizeNotifier to listen outside of the build method for changes
+* feat: add Material / Compose / Cupertino WindowSizes
