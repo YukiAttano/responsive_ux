@@ -6,15 +6,14 @@ import '../data/window_size.dart';
 import '../data/window_size_configuration_data.dart';
 import 'window_size_configuration.dart';
 
-typedef Builder = Widget Function(WindowSize width, WindowSize height, Widget? child);
+typedef Builder = Widget Function(BuildContext context, WindowSize width, WindowSize height, Widget? child);
 
 /// To define your own [WindowSize]s, insert a [WindowSizeConfiguration] in the Widget tree
 class WindowSizeBuilder extends StatefulWidget {
-  final FlutterView? flutterView;
   final Builder builder;
   final Widget? child;
 
-  const WindowSizeBuilder._({super.key, this.flutterView, required this.builder, this.child});
+  const WindowSizeBuilder._({super.key, required this.builder, this.child});
 
   const WindowSizeBuilder({Key? key, required Builder builder, Widget? child}) : this._(key: key, builder: builder, child: child);
 
@@ -46,6 +45,19 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
+    _evaluate();
+  }
+
+  @override
+  void didUpdateWidget(covariant WindowSizeBuilder oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (widget.builder != oldWidget.builder || widget.child != oldWidget.child) {
+      _evaluate(force: true);
+    }
+  }
+
+  void _evaluate({bool force = false}) {
     WindowSizeConfigurationData data = WindowSizeConfiguration.of(context);
 
     WindowSize width;
@@ -54,11 +66,12 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
     Size size = MediaQuery.sizeOf(context);
     (width, height) = data.getWindowSize(size);
 
-    if (width != _width || height != _height) {
+    if (force || width != _width || height != _height) {
       _width = width;
       _height = height;
 
       _child = widget.builder(
+        context,
         width,
         height,
         widget.child,

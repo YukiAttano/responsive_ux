@@ -1,7 +1,7 @@
 import 'package:example/util/screen.dart';
 import 'package:example/util/window_size_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_ui/responsive_ux.dart';
+import 'package:responsive_ux/responsive_ux.dart';
 
 class ListenerScreen extends StatefulWidget {
   const ListenerScreen({super.key});

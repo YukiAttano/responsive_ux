@@ -1,7 +1,7 @@
 import 'package:example/util/screen.dart';
 import 'package:example/util/window_size_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_ui/responsive_ux.dart';
+import 'package:responsive_ux/responsive_ux.dart';
 
 class BuilderScreen extends StatelessWidget {
   const BuilderScreen({super.key});
@@ -11,7 +11,7 @@ class BuilderScreen extends StatelessWidget {
     return Screen(
       title: "Builder Screen",
       child: WindowSizeBuilder(
-        builder: (width, height, child) {
+        builder: (context, width, height, child) {
           String w = width.toWindowSizeString();
           String h = height.toWindowSizeString();
 

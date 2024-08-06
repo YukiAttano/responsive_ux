@@ -1,5 +1,5 @@
 
-import 'package:responsive_ui/responsive_ux.dart';
+import 'package:responsive_ux/responsive_ux.dart';
 
 extension WindowSizeExtension on WindowSize? {
 

@@ -10,3 +10,12 @@
 
 * feat: add WindowSizeNotifier to listen outside of the build method for changes
 * feat: add Material / Compose / Cupertino WindowSizes
+
+## 0.2.0
+
+### Added
+* **Breaking:** BuildContext is now provided by WindowSizeBuilder
+
+### Fixed
+* Example imports fixed to correct library name
+ 
