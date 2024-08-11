@@ -22,7 +22,7 @@ Feel free to reach out on GitHub
 - Implementation of (Apple) [UserInterfaceSizeClass](https://anvilproject.org/guides/content/creating-links)
 - Implementation of (Material) [WindowSizeClass](https://m3.material.io/foundations/layout/applying-layout/window-size-classes#2bb70e22-d09b-4b73-9c9f-9ef60311ccc8)
 
-You can also easily create your own Layout bounds.
+- BreakpointBuilder for efficiently rebuilding widgets based on a list of Breakpoints
 
 ## Getting started
 

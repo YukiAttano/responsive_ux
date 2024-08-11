@@ -23,6 +23,7 @@
 
 ### Added
 * feat: WindowSizeBuilder.override() constructor to allow widgets to rebuild with a directly provided configuration
+* feat: Breakpoint and BreakpointBuilder for widgets to rebuild defined on local breakpoints
 
 
  
