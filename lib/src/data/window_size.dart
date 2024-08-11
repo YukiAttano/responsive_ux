@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
+import 'package:responsive_ux/src/data/breakpoint.dart';
 
 /// A [WindowSize] is defined after the WindowSizeClass by Android and consists of a minimal value for width and height
 /// where each corresponds to either the WindowSizeClass of the width or the WindowSizeClass of the height.
@@ -13,11 +14,24 @@ import 'package:flutter/widgets.dart';
 /// ```
 /// Compact is therefor implemented as width: 0 and height: 0
 ///
+/// A WindowSize is defined per width and height independently but both share the same name.
+/// Example:
+/// ```
+///   WindowSize medium = WindowSize(600, 480)
+///
+///   // The WindowSizeClass for width "medium" is 600
+///   // The WindowSizeClass for height "medium" is 480
+///   // Both are the "medium" WindowSizeClass but the Size is independently calculated
+/// ```
+///
 class WindowSize {
   final double width;
   final double height;
 
   const WindowSize(this.width, this.height);
+
+  Size toSize() => Size(width, height);
+  Breakpoint toBreakpoint() => Breakpoint(width, height);
 
   /// The returned [WindowSize] is valid only for [WindowSize.width].
   /// To receive the correct [WindowSize] for the height, use [ofHeight]
