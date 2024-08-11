@@ -10,12 +10,24 @@ typedef Builder = Widget Function(BuildContext context, WindowSize width, Window
 
 /// To define your own [WindowSize]s, insert a [WindowSizeConfiguration] in the Widget tree
 class WindowSizeBuilder extends StatefulWidget {
+  final WindowSizeConfigurationData? data;
   final Builder builder;
   final Widget? child;
 
-  const WindowSizeBuilder._({super.key, required this.builder, this.child});
+  const WindowSizeBuilder._({super.key, this.data, required this.builder, this.child});
 
-  const WindowSizeBuilder({Key? key, required Builder builder, Widget? child}) : this._(key: key, builder: builder, child: child);
+  /// Access its configuration from an ancestor [WindowSizeConfiguration] widget.
+  ///
+  /// Intended to be used for root widgets that control the navigation UI like Screens/Pages.
+  const WindowSizeBuilder({Key? key, required Builder builder, Widget? child})
+      : this._(key: key, builder: builder, child: child);
+
+  /// Ignores any ancestor [WindowSizeConfiguration] and uses its own [data]
+  ///
+  /// Intended for easier testing and should not be used in production.
+  const WindowSizeBuilder.override(
+      {Key? key, WindowSizeConfigurationData? data, required Builder builder, Widget? child})
+      : this._(key: key, data: data, builder: builder, child: child);
 
 /*
   /// Uses the given [view] or the first found view instead of [MediaQuery].
@@ -52,13 +64,13 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
   void didUpdateWidget(covariant WindowSizeBuilder oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (widget.builder != oldWidget.builder || widget.child != oldWidget.child) {
+    if (widget.data != oldWidget.data || widget.builder != oldWidget.builder || widget.child != oldWidget.child) {
       _evaluate(force: true);
     }
   }
 
   void _evaluate({bool force = false}) {
-    WindowSizeConfigurationData data = WindowSizeConfiguration.of(context);
+    WindowSizeConfigurationData data = widget.data ?? WindowSizeConfiguration.of(context);
 
     WindowSize width;
     WindowSize height;
@@ -84,4 +96,3 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
     return _child;
   }
 }
-

@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:example/local_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_ux/responsive_ux.dart';
 
@@ -22,8 +23,9 @@ class ResponsiveUi extends StatelessWidget {
           sizes: [WindowSizes.compact]
         ),*/
         child:
-          BuilderScreen(),
+          //BuilderScreen(),
           //ListenerScreen(),
+          LocalScreen(),
       ),
     );
   }

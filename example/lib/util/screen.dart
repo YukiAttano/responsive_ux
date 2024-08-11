@@ -20,7 +20,7 @@ class Screen extends StatelessWidget {
               child: Text(description),
             ),
             const SizedBox(height: 20),
-            child,
+            Flexible(child: child),
           ],
         ),
       ),

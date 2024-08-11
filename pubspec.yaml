@@ -1,6 +1,6 @@
 name: responsive_ux
 description: "various utilities to implement a Responsive UX."
-version: 0.2.0
+version: 0.2.1
 repository: https://github.com/YukiAttano/responsive_ux
 
 environment:

@@ -18,4 +18,11 @@
 
 ### Fixed
 * Example imports fixed to correct library name
+
+## 0.2.1
+
+### Added
+* feat: WindowSizeBuilder.override() constructor to allow widgets to rebuild with a directly provided configuration
+
+
  

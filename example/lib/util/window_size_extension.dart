@@ -9,6 +9,8 @@ extension WindowSizeExtension on WindowSize? {
         return "Compact";
       case WindowSizes.medium:
         return "Medium";
+      case WindowSizes.regular:
+        return "Regular";
       case WindowSizes.expanded:
         return "Expanded";
       case WindowSizes.large:
