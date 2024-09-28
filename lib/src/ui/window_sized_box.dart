@@ -1,32 +1,30 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import '../data/window_size.dart';
 import '../data/window_size_configuration_data.dart';
 import 'window_size_configuration.dart';
 
-typedef Builder = Widget Function(BuildContext context, WindowSize width, WindowSize height, Widget? child);
+typedef WindowSizeBuilder = Widget Function(BuildContext context, WindowSize width, WindowSize height, Widget? child);
 
 /// To define your own [WindowSize]s, insert a [WindowSizeConfiguration] in the Widget tree
-class WindowSizeBuilder extends StatefulWidget {
+class WindowSizedBox extends StatefulWidget {
   final WindowSizeConfigurationData? data;
-  final Builder builder;
+  final WindowSizeBuilder builder;
   final Widget? child;
 
-  const WindowSizeBuilder._({super.key, this.data, required this.builder, this.child});
+  const WindowSizedBox._({super.key, this.data, required this.builder, this.child});
 
   /// Access its configuration from an ancestor [WindowSizeConfiguration] widget.
   ///
   /// Intended to be used for root widgets that control the navigation UI like Screens/Pages.
-  const WindowSizeBuilder({Key? key, required Builder builder, Widget? child})
+  const WindowSizedBox({Key? key, required WindowSizeBuilder builder, Widget? child})
       : this._(key: key, builder: builder, child: child);
 
   /// Ignores any ancestor [WindowSizeConfiguration] and uses its own [data]
   ///
   /// Intended for easier testing and should not be used in production.
-  const WindowSizeBuilder.override(
-      {Key? key, WindowSizeConfigurationData? data, required Builder builder, Widget? child})
+  const WindowSizedBox.override(
+      {Key? key, WindowSizeConfigurationData? data, required WindowSizeBuilder builder, Widget? child})
       : this._(key: key, data: data, builder: builder, child: child);
 
 /*
@@ -44,10 +42,10 @@ class WindowSizeBuilder extends StatefulWidget {
 */
 
   @override
-  State<WindowSizeBuilder> createState() => _WindowSizeBuilderState();
+  State<WindowSizedBox> createState() => _WindowSizedBoxState();
 }
 
-class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
+class _WindowSizedBoxState extends State<WindowSizedBox> {
   WindowSize? _width;
   WindowSize? _height;
 
@@ -61,7 +59,7 @@ class _WindowSizeBuilderState extends State<WindowSizeBuilder> {
   }
 
   @override
-  void didUpdateWidget(covariant WindowSizeBuilder oldWidget) {
+  void didUpdateWidget(covariant WindowSizedBox oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (widget.data != oldWidget.data || widget.builder != oldWidget.builder || widget.child != oldWidget.child) {

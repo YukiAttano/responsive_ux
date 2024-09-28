@@ -10,7 +10,7 @@ class BuilderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Screen(
       title: "Builder Screen",
-      child: WindowSizeBuilder(
+      child: WindowSizedBox(
         builder: (context, width, height, child) {
           String w = width.toWindowSizeString();
           String h = height.toWindowSizeString();
