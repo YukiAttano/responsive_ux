@@ -1,4 +1,4 @@
-import 'window_size.dart';
+import "window_size.dart";
 
 sealed class WindowSizes {
 
@@ -36,7 +36,7 @@ sealed class WindowSizes {
   /// see https://m3.material.io/foundations/layout/canonical-layouts/list-detail
   ///
   /// From: https://m3.material.io/foundations/layout/applying-layout/window-size-classes
-  /// ```
+  /// ```text
   /// Large and extra-large window size classes are most useful for creating web experiences tailored to laptop and desktop devices.
   /// Your product may not need large and extra-large window size classes.
   /// Consider your platform’s conventions and users when making decisions on which window size classes to design for.
@@ -72,4 +72,3 @@ sealed class WindowSizes {
     WindowSizes.extraLarge,
   ];
 }
-

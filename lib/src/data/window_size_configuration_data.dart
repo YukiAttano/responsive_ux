@@ -1,9 +1,9 @@
-import 'dart:ui';
+import "dart:ui";
 
-import 'package:flutter/widgets.dart';
+import "package:flutter/widgets.dart";
 
-import 'window_size.dart';
-import 'window_sizes.dart';
+import "window_size.dart";
+import "window_sizes.dart";
 
 class WindowSizeConfigurationData {
   final List<WindowSize> sizes;
@@ -11,7 +11,7 @@ class WindowSizeConfigurationData {
   const WindowSizeConfigurationData._({required this.sizes});
 
   factory WindowSizeConfigurationData({required List<WindowSize> sizes}) {
-    assert(sizes.isNotEmpty);
+    assert(sizes.isNotEmpty, "sizes must contain at least one WindowSize");
 
     return WindowSizeConfigurationData._(sizes: sizes);
   }
@@ -32,7 +32,7 @@ class WindowSizeConfigurationData {
   /// Returns (width, height) [WindowSize] of the current view.
   ///
   /// Note: https://main-api.flutter.dev/flutter/services/SystemChrome/setPreferredOrientations.html
-  /// As described in the documentation above, [MediaQuery.size] might return a letterboxed size.
+  /// As described in the documentation above, [MediaQueryData.size] might return a letterboxed size.
   (WindowSize, WindowSize) windowSizeOfMediaQuery(BuildContext context) {
     return getWindowSize(MediaQuery.sizeOf(context));
   }

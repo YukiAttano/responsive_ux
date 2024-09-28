@@ -1,7 +1,7 @@
-import 'dart:ui';
 
-import 'package:flutter/widgets.dart';
-import 'package:responsive_ux/responsive_ux.dart';
+import "package:flutter/widgets.dart";
+
+import "../../responsive_ux.dart";
 
 /// A [Breakpoint] is defined as a minimum [width] and [height]
 ///
@@ -11,6 +11,7 @@ import 'package:responsive_ux/responsive_ux.dart';
 ///  Breakpoint big   = Breakpoint(100, 50);
 /// ```
 ///
+@immutable
 class Breakpoint {
   final double width;
   final double height;

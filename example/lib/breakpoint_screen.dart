@@ -11,7 +11,7 @@ class BreakpointScreen extends StatelessWidget {
       title: "Breakpoint Builder",
       child: Center(
         child: BreakpointBuilder(
-          breakpoints: [
+          breakpoints: const [
             Breakpoint(0, 0),
             Breakpoint(10, 10),
             Breakpoint(100, 100),

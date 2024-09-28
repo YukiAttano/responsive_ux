@@ -1,7 +1,7 @@
-import 'package:flutter/widgets.dart';
+import "package:flutter/widgets.dart";
 
-import '../data/window_size.dart';
-import '../ui/window_size_configuration.dart';
+import "../data/window_size.dart";
+import "../ui/window_size_configuration.dart";
 
 class WindowSizeNotifier extends ChangeNotifier {
   WindowSize? width;

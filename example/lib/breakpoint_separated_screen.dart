@@ -33,7 +33,7 @@ class BreakpointSeparatedScreen extends StatelessWidget {
 }
 
 class _WidthExample extends StatelessWidget {
-  const _WidthExample({super.key});
+  const _WidthExample();
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +59,12 @@ class _WidthExample extends StatelessWidget {
 }
 
 class _HeightExample extends StatelessWidget {
-  const _HeightExample({super.key});
+  const _HeightExample();
 
   @override
   Widget build(BuildContext context) {
     return BreakpointBuilder(
-      breakpoints: [
+      breakpoints: const [
         Breakpoint.height(0),
         Breakpoint.height(20),
         Breakpoint.height(50),

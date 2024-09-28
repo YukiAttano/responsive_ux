@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_ux/src/data/breakpoint.dart';
+import "package:flutter/material.dart";
+import "../data/breakpoint.dart";
 
 typedef BpBuilder = Widget Function(BuildContext context, Breakpoint breakpoint, Widget? child);
 

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
-import '../data/window_size.dart';
-import '../data/window_size_configuration_data.dart';
-import 'window_size_configuration.dart';
+import "../data/window_size.dart";
+import "../data/window_size_configuration_data.dart";
+import "window_size_configuration.dart";
 
 typedef WindowSizeBuilder = Widget Function(BuildContext context, WindowSize width, WindowSize height, Widget? child);
 
@@ -23,9 +23,12 @@ class WindowSizedBox extends StatefulWidget {
   /// Ignores any ancestor [WindowSizeConfiguration] and uses its own [data]
   ///
   /// Intended for easier testing and should not be used in production.
-  const WindowSizedBox.override(
-      {Key? key, WindowSizeConfigurationData? data, required WindowSizeBuilder builder, Widget? child})
-      : this._(key: key, data: data, builder: builder, child: child);
+  const WindowSizedBox.override({
+    Key? key,
+    WindowSizeConfigurationData? data,
+    required WindowSizeBuilder builder,
+    Widget? child,
+  }) : this._(key: key, data: data, builder: builder, child: child);
 
 /*
   /// Uses the given [view] or the first found view instead of [MediaQuery].
