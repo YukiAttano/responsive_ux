@@ -47,8 +47,8 @@ MaterialApp(
 ```
 
 ```dart
-WindowSizeBuilder(
-  builder: (width, height, child) {
+WindowSizedBox(
+  builder: (context, width, height, child) {
     String w = "";
     String h = "";
 
