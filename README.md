@@ -13,8 +13,7 @@ and the Flutter guide for
 
 Library to create Responsive UI more easily
 
-The current state is under active development and might change heavily until the first stable release.
-Feel free to reach out on GitHub
+The current state is under active development and is not expected to change.
 
 ## Features
 

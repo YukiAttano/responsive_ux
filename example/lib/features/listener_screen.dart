@@ -1,5 +1,5 @@
-import 'package:example/util/screen.dart';
-import 'package:example/util/window_size_extension.dart';
+import 'package:example/shared/screen.dart';
+import 'package:example/shared/window_size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_ux/responsive_ux.dart';
 
@@ -37,7 +37,9 @@ class _ListenerScreenState extends State<ListenerScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     _notifier.check(context);
-    // Remove WindowSizeConfiguration Widget inside main.dart to see the difference
+
+    // .check() will use fallback values if no ancestor is found while .safeCheck() returns null
+    // Remove WindowSizeConfiguration Widget inside main.dart to see the difference to .safeCheck()
     //_notifier.safeCheck(context);
   }
 

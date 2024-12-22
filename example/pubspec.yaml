@@ -39,6 +39,8 @@ dependencies:
 
   responsive_ux:
     path: "../"
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.6.2
 
 dev_dependencies:
   flutter_test:

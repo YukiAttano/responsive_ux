@@ -4,6 +4,8 @@
 
 * Breakpoint.toString() (removed colon)
 * WindowSize.toString() (removed colon)
+* Improve example project
+* Add link to a live example in the readme
 
 ## 0.3.0
 

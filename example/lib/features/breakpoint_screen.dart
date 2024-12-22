@@ -1,4 +1,4 @@
-import 'package:example/util/screen.dart';
+import 'package:example/shared/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_ux/responsive_ux.dart';
 
