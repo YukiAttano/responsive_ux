@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:example/routing/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +18,7 @@ class ResponsiveUi extends ConsumerWidget {
       routerConfig: ref.watch(router),
       builder: (context, child) {
         return WindowSizeConfiguration(
-          data: WindowSizeConfigurationData.material(),
+          data: const WindowSizeConfigurationData.material(),
           child: child!,
         );
       },

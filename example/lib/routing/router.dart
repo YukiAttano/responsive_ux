@@ -18,6 +18,8 @@ final router = Provider(
         if (state.uri.toString().isEmpty || state.uri.toString() == "/") {
           return initTarget.route;
         }
+
+        return null;
       },
       routes: [
         ShellRoute(

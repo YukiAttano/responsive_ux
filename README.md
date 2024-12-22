@@ -13,7 +13,9 @@ and the Flutter guide for
 
 Library to create Responsive UI more easily
 
-The current state is under active development and is not expected to change.
+The current state is under active development but is considered stable.
+
+I recommend to take a look at the [example project](https://responsiveux.web.app)
 
 ## Features
 
