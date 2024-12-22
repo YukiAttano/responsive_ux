@@ -1,7 +1,11 @@
 name: responsive_ux
-description: "various utilities to implement a Responsive UX."
-version: 0.3.0
+description: "React to window size changes according to Android/Apple/Material or your own specs. The way you need it."
+version: 1.0.0
 repository: https://github.com/YukiAttano/responsive_ux
+  - widget
+  - image
+  - ui
+  - flutter
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
