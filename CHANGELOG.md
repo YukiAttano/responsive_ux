@@ -1,3 +1,10 @@
+## 0.3.1 NEXT
+
+### Changed
+
+* Breakpoint.toString() (removed colon)
+* WindowSize.toString() (removed colon)
+
 ## 0.3.0
 
 ### Changed

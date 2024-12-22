@@ -59,7 +59,7 @@ class Breakpoint {
 
   @override
   String toString() {
-    return "Breakpoint:(width: $width, height: $height)";
+    return "Breakpoint(width: $width, height: $height)";
   }
 }
 

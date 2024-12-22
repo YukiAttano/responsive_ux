@@ -82,6 +82,6 @@ class WindowSize {
 
   @override
   String toString() {
-    return "WindowSize:(width: $width, height: $height)";
+    return "WindowSize(width: $width, height: $height)";
   }
 }
