@@ -20,7 +20,7 @@ I recommend to take a look at the [example project](https://responsiveux.web.app
 ## Features
 
 - Implementation of (Jetpack Compose) [WindowSizeClass](https://developer.android.com/develop/ui/compose/layouts/adaptive/window-size-classes?hl=de)
-- Implementation of (Apple) [UserInterfaceSizeClass](https://anvilproject.org/guides/content/creating-links)
+- Implementation of (Apple) [UserInterfaceSizeClass](https://developer.apple.com/documentation/swiftui/userinterfacesizeclass)
 - Implementation of (Material) [WindowSizeClass](https://m3.material.io/foundations/layout/applying-layout/window-size-classes#2bb70e22-d09b-4b73-9c9f-9ef60311ccc8)
 
 - BreakpointBuilder for efficiently rebuilding widgets based on a list of Breakpoints

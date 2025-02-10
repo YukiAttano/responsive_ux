@@ -1,6 +1,8 @@
-## NEXT
+## 0.3.2
 
+### Fixed
 
+* Link for Apples UserInterfaceSizeClass in ReadMe
 
 ## 0.3.1
 
