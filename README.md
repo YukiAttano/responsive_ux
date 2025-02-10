@@ -15,7 +15,7 @@ Library to create Responsive UI more easily
 
 The current state is under active development but is considered stable.
 
-I recommend to take a look at the [example project](https://responsiveux.web.app)
+I recommend to take a look at the [example project](https://responsiveux.memeozer.com)
 
 ## Features
 
