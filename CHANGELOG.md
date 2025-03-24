@@ -1,3 +1,9 @@
+## 1.0.1
+
+### Fixed
+
+* Topics key in pubspec
+
 ## 1.0.0
 
 ### Fixed

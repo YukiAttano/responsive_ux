@@ -1,7 +1,8 @@
 name: responsive_ux
 description: "React to window size changes according to Android/Apple/Material or your own specs. The way you need it."
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/YukiAttano/responsive_ux
+topics:
   - widget
   - image
   - ui
