@@ -1,7 +1,12 @@
+/// @docImport  "package:flutter/cupertino.dart";
+/// @docImport  "package:flutter/material.dart";
+library;
+
 import "package:flutter/foundation.dart";
 import "package:flutter/widgets.dart";
 
 import "../../responsive_ux.dart";
+import "../logic/platform_helper.dart";
 
 /// Should be inserted high in the Widget tree, e.g. beneath the [WidgetsApp]
 ///
@@ -13,9 +18,10 @@ class WindowSizeConfiguration extends StatelessWidget {
   /// Falls back to [WindowSizeConfigurationData.material] as it is more versatile than the others.
   const WindowSizeConfiguration({super.key, this.data = _fallback, required this.child});
 
+  @Deprecated("use WindowSizeConfiguration.adaptivePlatform instead")
+  factory WindowSizeConfiguration.adaptive({Key? key, required TargetPlatform platform, required Widget child}) = WindowSizeConfiguration.adaptivePlatform;
+
   /// Uses a recommend set for the specified [platform]
-  // ignore: comment_references
-  /// if [CupertinoApp] is used for iOS/macOS and [MaterialApp] for the rest.
   ///
   /// Use Theme.of(context).platform to retrieve a mockable value
   ///
@@ -25,11 +31,21 @@ class WindowSizeConfiguration extends StatelessWidget {
   ///   Other:        WindowSizes.material
   /// ```
   ///
-  /// See [_adaptiveData] for a more detailed use case.
+  /// See [adaptivePlatformConfig] for a more detailed use case.
+  WindowSizeConfiguration.adaptivePlatform({Key? key, required TargetPlatform platform, required Widget child})
+      : this(key: key, data: adaptivePlatformConfig(platform), child: child);
+
+  /// Uses a recommend set for the specified [WidgetsApp] ancestor
   ///
-  // TODO(YukiAttano): make Adaptive decide based on an ancestor [WidgetApp] of type [MaterialApp]/[CupertinoApp]
-  WindowSizeConfiguration.adaptive({Key? key, required TargetPlatform platform, required Widget child})
-      : this(key: key, data: _adaptiveData(platform), child: child);
+  /// ```text
+  ///   MaterialApp:  WindowSizes.material
+  ///   CupertinoApp: WindowSizes.cupertino
+  ///   Other:        WindowSizes.desktop
+  /// ```
+  ///
+  /// See [adaptiveAncestorConfig] for a more infos.
+  WindowSizeConfiguration.adaptiveAncestor({Key? key, required BuildContext context, required Widget child})
+      : this(key: key, data: adaptiveAncestorConfig(context), child: child);
 
   static const WindowSizeConfigurationData _fallback = WindowSizeConfigurationData.material();
 
@@ -74,7 +90,7 @@ class WindowSizeConfiguration extends StatelessWidget {
   ///
   /// If you make no difference in terms of UI for any platform, e.g. using always a MaterialApp and not a CupertinoApp (or vice versa),
   /// don't use the adaptive configuration and always apply [WindowSizeConfigurationData.material] for example.
-  static WindowSizeConfigurationData _adaptiveData(TargetPlatform platform) {
+  static WindowSizeConfigurationData adaptivePlatformConfig(TargetPlatform platform) {
     switch (platform) {
       case TargetPlatform.android:
         return const WindowSizeConfigurationData.compose();
@@ -85,6 +101,20 @@ class WindowSizeConfiguration extends StatelessWidget {
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return const WindowSizeConfigurationData.desktop();
+    }
+  }
+
+  /// will return a config based on the used [WidgetsApp] type (e.g. [CupertinoApp] or [MaterialApp]).
+  ///
+  /// While [adaptivePlatformConfig] decides based on the [TargetPlatform] recommendations (made by Android/Apple),
+  /// this method decides based on the UI recommendations of the UI Style (Material/Cupertino)
+  static WindowSizeConfigurationData adaptiveAncestorConfig(BuildContext context) {
+    if (isCupertinoApp(context)) {
+      return const WindowSizeConfigurationData.cupertino();
+    } else if (isMaterialApp(context)) {
+      return const WindowSizeConfigurationData.material();
+    } else {
+      return const WindowSizeConfigurationData.desktop();
     }
   }
 }
