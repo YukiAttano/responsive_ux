@@ -1,4 +1,8 @@
-## NEXT
+## 1.0.2
+
+### Added
+
+* Added issue tracker to Readme
 
 ### Changed
 
