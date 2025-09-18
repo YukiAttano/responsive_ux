@@ -1,7 +1,6 @@
 import "window_size.dart";
 
 sealed class WindowSizes {
-
   static const WindowSize compact = WindowSize(0, 0);
   static const WindowSize medium = WindowSize(600, 480);
   static const WindowSize expanded = WindowSize(840, 900);
@@ -16,8 +15,15 @@ sealed class WindowSizes {
   /// https://m3.material.io/foundations/layout/applying-layout/window-size-classes#9e94b1fb-e842-423f-9713-099b40f13922
   static const WindowSize extraLarge = WindowSize(1600, 1600);
 
-  // TODO(YukiAttano): check if this is the correct breakpoint for Apple
-  // It is calculated from ChatGPT based on the official documentation
+  /// Apple seem to have no specific breakpoint to rely on
+  ///
+  /// The current breakpoint was chosen on a dataset collected from
+  /// https://developer.apple.com/design/human-interface-guidelines/layout
+  ///
+  /// unfortunately, it seems that Apple also handles iPads and iPhones differently.
+  ///
+  /// If you require the correct value, either use another package that reads those values from
+  /// the device or use a dice.
   static const WindowSize regular = WindowSize(768, 768);
 
   /// [WindowSize]Classes defined by Android (for Jetpack Compose, their native UI framework).
@@ -50,7 +56,6 @@ sealed class WindowSizes {
     WindowSizes.large,
     WindowSizes.extraLarge,
   ];
-
 
   /// [WindowSize]Classes defined by Apple (known as UserInterfaceSizeClass)
   ///
