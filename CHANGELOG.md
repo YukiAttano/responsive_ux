@@ -1,16 +1,19 @@
+## 1.0.3
+
+### Changed
+
+* Fixed Changelog layout
+
 ## 1.0.2
 
 ### Added
 
-* Added issue tracker to Readme
+* Added issue tracker to Readme 
+* WindowSizeConfiguration.adaptiveAncestor to size according to MaterialApp/CupertinoApp/WidgetsApp
 
 ### Changed
 
 * Deprecated WindowSizeConfiguration.adaptive and replaced with WindowSizeConfiguration.adaptivePlatform
-
-### Added
-
-* WindowSizeConfiguration.adaptiveAncestor to size according to MaterialApp/CupertinoApp/WidgetsApp 
 
 ### Fixed
 
