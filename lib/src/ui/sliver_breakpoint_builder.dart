@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
+
 import "../../responsive_ux.dart";
-import "../data/breakpoint.dart";
 
 /// The same as [BreakpointBuilder] but expects to build Slivers
 class SliverBreakpointBuilder extends BreakpointBuilder {
