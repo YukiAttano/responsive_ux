@@ -13,6 +13,8 @@ import "../../responsive_ux.dart";
 ///
 @immutable
 class Breakpoint {
+  static const Breakpoint zero = Breakpoint(0, 0);
+
   final double width;
   final double height;
 

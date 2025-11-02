@@ -14,35 +14,24 @@ class WindowSizedBox extends StatefulWidget {
 
   const WindowSizedBox._({super.key, this.data, required this.builder, this.child});
 
-  /// Access its configuration from an ancestor [WindowSizeConfiguration] widget.
+  /// Rebuilds based on the available screens size.
   ///
-  /// Intended to be used for root widgets that control the navigation UI like Screens/Pages.
+  /// Accesses its configuration from an ancestor [WindowSizeConfiguration] widget.
+  ///
+  /// Intended to be used for root widgets of the UI like those who define the navigation
+  /// or full-screen widgets like Screens/Pages.
   const WindowSizedBox({Key? key, required WindowSizeBuilder builder, Widget? child})
       : this._(key: key, builder: builder, child: child);
 
   /// Ignores any ancestor [WindowSizeConfiguration] and uses its own [data]
   ///
-  /// Intended for easier testing and should not be used in production.
+  /// Intended for easier testing.
   const WindowSizedBox.override({
     Key? key,
     WindowSizeConfigurationData? data,
     required WindowSizeBuilder builder,
     Widget? child,
   }) : this._(key: key, data: data, builder: builder, child: child);
-
-/*
-  /// Uses the given [view] or the first found view instead of [MediaQuery].
-  /// This will return a [WindowSize] for the full display and not the Window Flutter is rendered in.
-  ///
-  /// Most probably useless and unused
-  WindowSizeBuilder.view({Key? key, FlutterView? view, required Builder builder, Widget? child})
-      : this._(
-          key: key,
-          flutterView: view ?? WidgetsBinding.instance.platformDispatcher.views.firstOrNull,
-          builder: builder,
-          child: child,
-        );
-*/
 
   @override
   State<WindowSizedBox> createState() => _WindowSizedBoxState();

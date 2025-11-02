@@ -1,12 +1,13 @@
 name: responsive_ux
 description: "React to window size changes according to Android/Apple/Material or your own specs. The way you need it."
-version: 1.0.3
+version: 1.0.4
 repository: https://github.com/YukiAttano/responsive_ux
 issue_tracker: https://github.com/YukiAttano/responsive_ux/issues
 topics:
-  - widget
-  - image
+  - responsive
   - ui
+  - ux
+  - widget
   - flutter
 
 environment:
@@ -20,7 +21,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ">=3.0.0"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

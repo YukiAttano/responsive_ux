@@ -1,3 +1,15 @@
+## 1.0.4
+
+### ADD
+
+* Add Breakpoint.zero
+* Add SliverBreakpointBuilder
+
+### Changed
+
+* Improved docs
+* Improved ReadMe
+
 ## 1.0.3
 
 ### Changed
