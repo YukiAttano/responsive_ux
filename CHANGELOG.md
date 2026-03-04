@@ -1,3 +1,12 @@
+## 1.0.5
+
+### ADD
+
+* Add multiplication operator to WindowSize
+* Add division operator to WindowSize
+* Add Integer (truncating) division operator to WindowSize
+* Add modulo operator to WindowSize
+
 ## 1.0.4
 
 ### ADD

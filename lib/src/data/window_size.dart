@@ -72,6 +72,15 @@ class WindowSize {
     return (ofWidth(size.width, values), ofHeight(size.height, values));
   }
 
+  WindowSize operator *(double operand) => WindowSize(width * operand, height * operand);
+
+  WindowSize operator /(double operand) => WindowSize(width / operand, height / operand);
+
+  WindowSize operator ~/(double operand) =>
+      WindowSize((width ~/ operand).toDouble(), (height ~/ operand).toDouble());
+
+  WindowSize operator %(double operand) => WindowSize(width % operand, height % operand);
+
   @override
   int get hashCode => Object.hash(width, height);
 
